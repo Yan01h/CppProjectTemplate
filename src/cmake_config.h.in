@@ -1,0 +1,12 @@
+/*
+ * Copyright here
+ * License here
+ */
+
+#ifndef @PROJECT_ABBREVIATION@_CMAKE_CONFIG_H
+#define @PROJECT_ABBREVIATION@_CMAKE_CONFIG_H
+
+// Version
+#define @PROJECT_ABBREVIATION@_VERSION_STRING "@TEMP_VERSION_STRING@"
+
+#endif
