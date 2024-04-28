@@ -62,6 +62,22 @@
             }
         },
         {
+            "name": "clang",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++"
+            }
+        },
+        {
+            "name": "gcc",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
             "name": "x86-windows-msvc-debug",
             "description": "Build with MSVC for x86 Windows (Debug)",
             "inherits": [
@@ -100,14 +116,60 @@
                 "windows",
                 "release"
             ]
+        },
+        {
+            "name": "x64-clang-debug",
+            "description": "Build with clang/clang++ for x64 (Debug)",
+            "inherits": [
+                "base",
+                "x64",
+                "clang",
+                "debug"
+            ]
+        },
+        {
+            "name": "x64-clang-release",
+            "description": "Build with clang/clang++ for x64 (Release)",
+            "inherits": [
+                "base",
+                "x64",
+                "clang",
+                "release"
+            ]
+        },
+        {
+            "name": "x64-gcc-debug",
+            "description": "Build with gcc/g++ for x64 (Debug)",
+            "inherits": [
+                "base",
+                "x64",
+                "gcc",
+                "debug"
+            ]
+        },
+        {
+            "name": "x64-gcc-release",
+            "description": "Build with gcc/g++ for x64 (Release)",
+            "inherits": [
+                "base",
+                "x64",
+                "gcc",
+                "release"
+            ]
         }
     ],
     "buildPresets": [
         {
             "name": "default-windows-build",
             "displayName": "Default",
-            "description": "Default build",
+            "description": "Default windows build",
             "configurePreset": "x64-windows-msvc-debug"
+        },
+        {
+            "name": "default-build",
+            "displayName": "Default",
+            "description": "Default build",
+            "configurePreset": "x64-clang-debug"
         }
     ]
 }
