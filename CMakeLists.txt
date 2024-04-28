@@ -23,6 +23,9 @@ cmake_policy(SET CMP0091 NEW) # MSVC Runtime Library
 #    Settings    #
 ##################
 
+# For clangd
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Disable in-source builds
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
