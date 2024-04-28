@@ -65,7 +65,7 @@ IncludeCategories:
   - Regex: '^"'
     Priority: 2
 IncludeIsMainRegex: '(-test)?$'
-IndentCaseLabels: true
+IndentCaseLabels: false
 IndentPPDirectives: AfterHash
 IndentWidth: 4
 IndentWrappedFunctionNames: false
@@ -89,7 +89,7 @@ SortIncludes: true
 SortUsingDeclarations: true
 SpaceAfterCStyleCast: false
 SpaceAfterLogicalNot: false
-SpaceAfterTemplateKeyword: true
+SpaceAfterTemplateKeyword: false
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeCpp11BracedList: false
 SpaceBeforeCtorInitializerColon: true
