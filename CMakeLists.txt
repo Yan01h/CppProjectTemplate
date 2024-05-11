@@ -48,7 +48,7 @@ project(
 # Version
 set(PR_VERSION_STRING "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
 if(CMAKE_BUILD_TYPE STREQUAL Debug)
-    set($PR_VERSION_STRING "${PR_VERSION_STRING}-debug")
+    set(PR_VERSION_STRING "${PR_VERSION_STRING}-debug")
 endif()
 
 # Other project settings
