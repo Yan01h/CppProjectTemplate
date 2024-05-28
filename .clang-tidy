@@ -7,7 +7,7 @@ Checks: '
     performance-*,
     portability-*,
     readability-*,
-    -modernize-use-nullptr
+    -modernize-use-nullptr,
     -readability-redundant-access-specifiers
 '
 WarningsAsErrors: 'true'
