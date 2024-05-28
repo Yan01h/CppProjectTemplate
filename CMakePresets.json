@@ -59,6 +59,13 @@
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "enableMicrosoftCodeAnalysis": true,
+                    "enableClangTidyCodeAnalysis": true,
+                    "disableExternalAnalysis": true
+                }
             }
         },
         {
@@ -156,20 +163,6 @@
                 "gcc",
                 "release"
             ]
-        }
-    ],
-    "buildPresets": [
-        {
-            "name": "default-windows-build",
-            "displayName": "Default",
-            "description": "Default windows build",
-            "configurePreset": "x64-windows-msvc-debug"
-        },
-        {
-            "name": "default-build",
-            "displayName": "Default",
-            "description": "Default build",
-            "configurePreset": "x64-clang-debug"
         }
     ]
 }

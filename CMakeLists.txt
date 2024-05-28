@@ -2,7 +2,7 @@
 #
 # License here
 
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.15...3.29)
 
 message(STATUS "-------------------------------")
 message(STATUS "CMake Version: ${CMAKE_VERSION}")
@@ -10,8 +10,12 @@ message(STATUS "-------------------------------")
 message(STATUS "CMake SrcDir: ${CMAKE_SOURCE_DIR}")
 message(STATUS "CMake BinDir: ${CMAKE_BINARY_DIR}")
 
-cmake_policy(SET CMP0048 NEW) # Project Version
-cmake_policy(SET CMP0091 NEW) # MSVC Runtime Library
+if (POLICY CMP0048)
+    cmake_policy(SET CMP0048 NEW) # Project Version
+endif ()
+if (POLICY CMP0091)
+    cmake_policy(SET CMP0091 NEW) # MSVC Runtime Library
+endif ()
 
 ##################
 #    Settings    #
@@ -38,28 +42,30 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DPR_DEBUG_BUILD")
 #################
 
 project(
-    ProjectName
-    VERSION 0.1.0
-    DESCRIPTION "Description here"
-    HOMEPAGE_URL "https://github.com/user/repository"
-    LANGUAGES CXX
+        ProjectName
+        VERSION 0.1.0
+        DESCRIPTION "Description here"
+        HOMEPAGE_URL "https://github.com/user/repository"
+        LANGUAGES CXX
 )
 
 # Version
 set(PR_VERSION_STRING "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
-if(CMAKE_BUILD_TYPE STREQUAL Debug)
+if (CMAKE_BUILD_TYPE STREQUAL Debug)
     set(PR_VERSION_STRING "${PR_VERSION_STRING}-debug")
-endif()
+endif ()
 
 # Other project settings
-if(MSVC)
-    add_compile_options(/MP) # For faster compile times
-    if(CMAKE_BUILD_TYPE STREQUAL Debug)
+if (MSVC)
+    add_compile_options(/MP /W4 /WX) # For faster compile times
+    if (CMAKE_BUILD_TYPE STREQUAL Debug)
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebugDLL")
-    else()
+    else ()
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDLL")
-    endif()
-endif()
+    endif ()
+else ()
+    add_compile_options(-Wall -Wextra -Wpedantic -Werror)
+endif ()
 
 ########################
 #    Subdirectories    #
