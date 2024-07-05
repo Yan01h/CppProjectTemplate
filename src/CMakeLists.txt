@@ -6,8 +6,9 @@
 #    Sources    #
 #################
 
-set(PR_SOURCE_FILES
-        main.cpp
+set(
+    PR_SOURCE_FILES
+    main.cpp
 )
 
 ######################
@@ -23,10 +24,17 @@ set(PR_SOURCE_FILES
 add_executable(Executable ${PR_SOURCE_FILES})
 
 if (WIN32)
-    set_target_properties(Executable PROPERTIES
+    set_target_properties(
+        Executable PROPERTIES
         LINK_FLAGS_DEBUG "/SUBSYSTEM:CONSOLE"
         LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS"
     )
+endif ()
+
+if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    target_compile_options(Executable PRIVATE /W4 /WX)
+else ()
+    target_compile_options(Executable PRIVATE -Wall -Wextra -Wpedantic -Werror)
 endif ()
 
 # Include paths

@@ -42,11 +42,11 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DPR_DEBUG_BUILD")
 #################
 
 project(
-        ProjectName
-        VERSION 0.1.0
-        DESCRIPTION "Description here"
-        HOMEPAGE_URL "https://github.com/user/repository"
-        LANGUAGES CXX
+    ProjectName
+    VERSION 0.1.0
+    DESCRIPTION "Description here"
+    HOMEPAGE_URL "https://github.com/user/repository"
+    LANGUAGES CXX
 )
 
 # Version
@@ -57,14 +57,11 @@ endif ()
 
 # Other project settings
 if (MSVC)
-    add_compile_options(/MP /W4 /WX) # For faster compile times
     if (CMAKE_BUILD_TYPE STREQUAL Debug)
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebugDLL")
     else ()
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDLL")
     endif ()
-else ()
-    add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 endif ()
 
 ########################
