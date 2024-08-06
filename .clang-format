@@ -14,7 +14,7 @@ AllowAllConstructorInitializersOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: Inline
+AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: All
 AllowShortLoopsOnASingleLine: false
@@ -53,16 +53,18 @@ ContinuationIndentWidth: 4
 Cpp11BracedListStyle: true
 DerivePointerAlignment: false
 DisableFormat: false
-EmptyLineBeforeAccessModifier : Never
+EmptyLineBeforeAccessModifier: Never
 ExperimentalAutoDetectBinPacking: false
 FixNamespaceComments: true
-ForEachMacros: []
+ForEachMacros: [ ]
 IncludeBlocks: Regroup
 IncludeCategories:
-  - Regex: '^<'
+  - Regex: '<([A-Za-z0-9\/-_])+>'
     Priority: 1
-  - Regex: '^"'
+  - Regex: '^<'
     Priority: 2
+  - Regex: '^"'
+    Priority: 3
 IncludeIsMainRegex: '(-test)?$'
 IndentCaseLabels: false
 IndentPPDirectives: AfterHash
@@ -73,7 +75,7 @@ MacroBlockBegin: ''
 MacroBlockEnd: ''
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
-NamespaceMacros: []
+NamespaceMacros: [ ]
 PenaltyBreakAssignment: 2
 PenaltyBreakBeforeFirstCallParameter: 19
 PenaltyBreakComment: 60
@@ -103,8 +105,8 @@ SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
 Standard: c++20
-StatementMacros: []
-TypenameMacros: []
+StatementMacros: [ ]
+TypenameMacros: [ ]
 TabWidth: 4
 UseCRLF: true
 UseTab: Never
