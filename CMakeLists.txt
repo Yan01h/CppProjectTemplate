@@ -2,7 +2,7 @@
 #
 # License here
 
-cmake_minimum_required(VERSION 3.15...3.29)
+cmake_minimum_required(VERSION 3.15...4.01)
 
 message(STATUS "-------------------------------")
 message(STATUS "CMake Version: ${CMAKE_VERSION}")
@@ -29,7 +29,7 @@ set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
 # Set C/C++ Standard
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 

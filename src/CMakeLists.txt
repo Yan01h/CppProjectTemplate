@@ -31,10 +31,17 @@ if (WIN32)
     )
 endif ()
 
+# Set compiler warnings
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    target_compile_options(Executable PRIVATE /W4 /WX)
+    target_compile_options(Executable PRIVATE /W4)
+    if (${CMAKE_BUILD_TYPE} STREQUAL Release)
+        target_compile_options(Executable PRIVATE /WX)
+    endif ()
 else ()
-    target_compile_options(Executable PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    target_compile_options(Executable PRIVATE -Wall -Wextra -Wpedantic)
+    if (${CMAKE_BUILD_TYPE} STREQUAL Release)
+        target_compile_options(Executable PRIVATE -Werror)
+    endif ()
 endif ()
 
 # Include paths

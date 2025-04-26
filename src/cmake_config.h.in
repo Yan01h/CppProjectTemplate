@@ -3,10 +3,7 @@
  * License here
  */
 
-#ifndef PR_CMAKE_CONFIG_H
-#define PR_CMAKE_CONFIG_H
+#pragma once
 
 // Version
 #define PR_VERSION_STRING "@PR_VERSION_STRING@"
-
-#endif
