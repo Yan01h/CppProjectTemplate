@@ -57,7 +57,7 @@ endif ()
 
 # Other project settings
 if (MSVC)
-    if (CMAKE_BUILD_TYPE STREQUAL Debug)
+    if (${CMAKE_BUILD_TYPE} STREQUAL Debug)
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebugDLL")
     else ()
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDLL")
