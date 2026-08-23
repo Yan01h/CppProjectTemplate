@@ -1,9 +1,0 @@
-/*
- * Copyright here
- * License here
- */
-
-#pragma once
-
-// Version
-#define PR_VERSION_STRING "@PR_VERSION_STRING@"

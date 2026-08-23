@@ -34,7 +34,7 @@ BraceWrapping:
   AfterUnion: true
   AfterExternBlock: false
   BeforeCatch: true
-  BeforeElse: false
+  BeforeElse: true
   IndentBraces: false
   SplitEmptyFunction: false
   SplitEmptyRecord: true
@@ -45,7 +45,7 @@ BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeComma
 BreakInheritanceList: BeforeComma
 BreakStringLiterals: true
-ColumnLimit: 120
+ColumnLimit: 100
 CompactNamespaces: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ConstructorInitializerIndentWidth: 4
@@ -59,17 +59,22 @@ FixNamespaceComments: true
 ForEachMacros: [ ]
 IncludeBlocks: Regroup
 IncludeCategories:
-  - Regex: '<([A-Za-z0-9\/-_])+>'
+  - Regex: '^<[^Q][^.">]+>$'
     Priority: 1
-  - Regex: '^<'
+  - Regex: '^<Q[^.">]+>$'
     Priority: 2
-  - Regex: '^"'
+  - Regex: '^<.*\.[^">]+>$'
     Priority: 3
+  - Regex: '^"[^u][^"]*\.[^"]+"$'
+    Priority: 4
+  - Regex: '^"ui_.*\.[^"]+"$'
+    Priority: 5
 IncludeIsMainRegex: '(-test)?$'
 IndentCaseLabels: false
 IndentPPDirectives: AfterHash
 IndentWidth: 4
 IndentWrappedFunctionNames: false
+InsertNewlineAtEOF: true
 KeepEmptyLinesAtTheStartOfBlocks: false
 MacroBlockBegin: ''
 MacroBlockEnd: ''

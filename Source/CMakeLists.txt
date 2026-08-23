@@ -20,28 +20,32 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-cmake_minimum_required(VERSION 4.2.0)
+#### Dependencies ####
 
-# Disable in-source builds
-set(CMAKE_DISABLE_SOURCE_CHANGES ON)
-set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
+include(FindOrFetchPackage)
 
-# Set C/C++ Standard
-set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+#### Executable ####
 
-# Output
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+add_executable(cppprojecttemplate)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake")
-
-#### Project ####
-
-project(
-    CppProjectTemplate
-    LANGUAGES CXX
+# Sources
+target_sources(
+    cppprojecttemplate PRIVATE
+    main.cpp
 )
 
-add_subdirectory(Source)
+# Includes
+target_include_directories(cppprojecttemplate PRIVATE .)
+
+# Libraries
+target_link_libraries(
+    cppprojecttemplate PRIVATE
+    # Libraries
+)
+
+# Compiler options
+if (MSVC)
+    target_compile_options(cppprojecttemplate PRIVATE /W4 /WX)
+else ()
+    target_compile_options(cppprojecttemplate PRIVATE -W4 -Werror)
+endif ()

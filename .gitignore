@@ -1,11 +1,17 @@
-# CMake
-out
+# Output
+out/
+build/
 
 # Visual Studio
-.vs
+.vs/
+CMakeSettings.json
+*.user
 
 # Visual Studio Code
-.vscode
+.vscode/
 
 # CLion
-.idea
+.idea/
+
+# Clangd
+.cache

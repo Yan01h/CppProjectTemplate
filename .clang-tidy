@@ -1,16 +1,14 @@
-Checks: '
-    bugprone-*,
-    clang-diagnostic-*,
-    clang-analyzer-*,
-    cppcoreguidelines-*,
-    modernize-*,
-    performance-*,
-    portability-*,
-    readability-*,
-    -modernize-use-nullptr,
-    -readability-redundant-access-specifiers
-'
-WarningsAsErrors: 'true'
-FormatStyle: 'file'
+Checks: >
+  bugprone-*,
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  - *-redundant-access-specifiers,
+HeaderFileExtensions: [ h, hpp ]
+ImplementationFileExtensions: [ c, cpp ]
+HeaderFilterRegex: '^.*/Source/.*'
 CheckOptions:
-  bugprone-exception-escape.FunctionsThatShouldNotThrow: 'WinMain','main'
+  readability-identifier-length.IgnoredParameterNames: 'x|y|w|h'
