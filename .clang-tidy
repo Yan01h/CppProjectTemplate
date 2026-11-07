@@ -1,14 +1,13 @@
-Checks: >
-  bugprone-*,
-  clang-diagnostic-*,
-  clang-analyzer-*,
-  cppcoreguidelines-*,
-  modernize-*,
-  performance-*,
-  readability-*,
-  - *-redundant-access-specifiers,
-HeaderFileExtensions: [ h, hpp ]
-ImplementationFileExtensions: [ c, cpp ]
-HeaderFilterRegex: '^.*/Source/.*'
+Checks:
+    bugprone-*
+    cppcoreguidelines-*
+    modernize-*
+    performance-*
+    readability-*
+    - *-redundant-access-specifiers
+HeaderFileExtensions: [h, hpp]
+ImplementationFileExtensions: [c, cc, cpp, cxx]
+HeaderFilterRegex: (include|src)/
+FormatStyle: file
 CheckOptions:
-  readability-identifier-length.IgnoredParameterNames: 'x|y|w|h'
+    readability-identifier-length.IgnoredParameterNames: x|y|z
